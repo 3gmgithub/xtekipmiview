@@ -6,4 +6,4 @@ services:
           - 8181:8080
           - 5959:5900
         volumes:
-          - ./config:/opt/IPMIView
+          - ./config:/config

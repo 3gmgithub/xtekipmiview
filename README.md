@@ -12,10 +12,7 @@ This container runs:
 ## Usage
 
 ```bash
-git clone https://github.com/3gmgithub/xtekipmiview
-cd ipmiview
-make
-docker run -p 8181:8080 3gmgithub/xtekipmiview:latest
+docker run -p 8181:8080 xtekllc/xtekipmiview:latest
 ```
 
 Then open your browser with address `http://localhost:8181/vnc.html`.
