@@ -11,8 +11,22 @@ This container runs:
 
 ## Usage
 
+Docker compose
 ```bash
-docker run -p 8181:8080 xtekllc/xtekipmiview:latest
+services:
+    ipmiview:
+        container_name: xtekipmiview
+        image: xtekllc/xtekipmiview:latest
+        ports:
+          - 8181:8080
+          - 5959:5900
+        volumes:
+          - ./config:/config
+```
+
+Docker run
+```bash
+docker run --name xtekipmiview -p 8181:8080 -p 5959:5900 -v ./config:/config xtekllc/xtekipmiview:latest
 ```
 
 Then open your browser with address `http://localhost:8181/vnc.html`.
@@ -20,3 +34,5 @@ Then open your browser with address `http://localhost:8181/vnc.html`.
 Or
 
 Open with VNC `localhost` port `5959`
+
+NOTE: When connected via browser you must disconnect before using VNC
