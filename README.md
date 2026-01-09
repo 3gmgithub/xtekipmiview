@@ -2,7 +2,6 @@
 
 Forked from [sunfoxcz/ipmiview](https://github.com/sunfoxcz/ipmiview)
 
-
 This container runs:
 
 * Xvfb - X11 in a virtual framebuffer
@@ -23,4 +22,4 @@ Then open your browser with address `http://localhost:8181/vnc.html`.
 
 Or
 
-Open with VNC localhost port 5900
+Open with VNC `localhost` port `5959`
