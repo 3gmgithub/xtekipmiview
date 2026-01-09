@@ -8,9 +8,9 @@ ENV DISPLAY=:0.0
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY files /opt/IPMIView
 
-RUN mkdir /config && \
-touch /config/IPMIView.properties && \
-touch /config/account.properties && \
+RUN mkdir /config
+
+RUN touch /config/account.properties && \
 touch /config/email.properties && \
 touch /config/smcrakp.properties && \
 touch /config/timeout.properties
@@ -44,4 +44,5 @@ RUN apt-get remove --purge -y git && \
 EXPOSE 8080
 EXPOSE 5900
 
+RUN touch /config/IPMIView.properties
 CMD ["/usr/bin/supervisord"]
