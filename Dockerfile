@@ -7,17 +7,19 @@ ENV DISPLAY=:0.0
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY files /opt/IPMIView
-RUN mkdir /config
-RUN touch /config/IPMIView.properties
-RUN touch /config/account.properties
-RUN touch /config/email.properties
-RUN touch /config/smcrakp.properties
-RUN touch /config/timeout.properties
-RUN ln -s /config/IPMIView.properties /opt/IPMIView/IPMIView.properties
-RUN ln -s /config/account.properties /opt/IPMIView/account.properties
-RUN ln -s /config/email.properties /opt/IPMIView/email.properties
-RUN ln -s /config/smcrakp.properties /opt/IPMIView/smcrakp.properties
-RUN ln -s /config/timeout.properties /opt/IPMIView/timeout.properties
+
+RUN mkdir /config && \
+touch /config/IPMIView.properties && \
+touch /config/account.properties && \
+touch /config/email.properties && \
+touch /config/smcrakp.properties && \
+touch /config/timeout.properties
+
+RUN ln -s /config/IPMIView.properties /opt/IPMIView/IPMIView.properties && \
+ln -s /config/account.properties /opt/IPMIView/account.properties && \
+ln -s /config/email.properties /opt/IPMIView/email.properties && \
+ln -s /config/smcrakp.properties /opt/IPMIView/smcrakp.properties && \
+ln -s /config/timeout.properties /opt/IPMIView/timeout.properties
 
 RUN apt-get update
 RUN apt-get dist-upgrade -y --no-install-recommends
