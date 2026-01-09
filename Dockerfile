@@ -1,11 +1,12 @@
 FROM ubuntu:18.04
-MAINTAINER Tomas Jacik <tomas@jacik.cz>
+
+MAINTAINER X-Tek dockerfile@xtekmail.com
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV DISPLAY=:0.0
 
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-ADD IPMIView_2.21.0_build.221118_bundleJRE_Linux_x64 /opt/IPMIView
+ADD files /opt/IPMIView
 
 RUN apt-get update
 RUN apt-get dist-upgrade -y --no-install-recommends
@@ -28,5 +29,6 @@ RUN apt-get remove --purge -y git && \
 	rm -rf /var/lib/apt/lists/*
 
 EXPOSE 8080
+EXPOSE 5900
 
 CMD ["/usr/bin/supervisord"]

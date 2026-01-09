@@ -1,4 +1,4 @@
-NAME = sunfoxcz/ipmiview
+NAME = 3gmgithub/xtekipmiview
 
 .PHONY: all build
 
