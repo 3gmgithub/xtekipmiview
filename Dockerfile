@@ -8,7 +8,6 @@ ENV DISPLAY=:0.0
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY files /opt/IPMIView
 RUN mkdir /config
-RUN rm /opt/IPMIView/*.properties
 RUN touch /config/IPMIView.properties
 RUN touch /config/account.properties
 RUN touch /config/email.properties
