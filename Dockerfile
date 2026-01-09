@@ -8,7 +8,12 @@ ENV DISPLAY=:0.0
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY files /opt/IPMIView
 RUN mkdir /config
-RUN mv /opt/IPMIView/*.properties /config
+RUN rm /opt/IPMIView/*.properties
+RUN touch /config/IPMIView.properties
+RUN touch /config/account.properties
+RUN touch /config/email.properties
+RUN touch /config/smcrakp.properties
+RUN touch /config/timeout.properties
 RUN ln -s /config/IPMIView.properties /opt/IPMIView/IPMIView.properties
 RUN ln -s /config/account.properties /opt/IPMIView/account.properties
 RUN ln -s /config/email.properties /opt/IPMIView/email.properties
