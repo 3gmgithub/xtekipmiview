@@ -5,8 +5,8 @@ LABEL org.opencontainers.image.authors="X-Tek dockerfile@xtekmail.com"
 ENV DEBIAN_FRONTEND=noninteractive
 ENV DISPLAY=:0.0
 
-ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-ADD files /opt/IPMIView
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY files /opt/IPMIView
 
 RUN apt-get update
 RUN apt-get dist-upgrade -y --no-install-recommends
