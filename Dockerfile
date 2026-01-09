@@ -44,6 +44,5 @@ RUN apt-get remove --purge -y git && \
 EXPOSE 8080
 EXPOSE 5900
 
-
 CMD ["/usr/bin/supervisord"]
 RUN touch /config/IPMIView.properties
